@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-gb" xml:lang="en-gb">
+<head>
+	<title>Example usage:jquery.font.js</title>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Language" content="en-gb" />
+	<meta name="robots" content="all" />
+	<meta http-equiv="imagetoolbar" content="false" />
+	<meta name="MSSmartTagsPreventParsing" content="true" />
+	<meta name="author" content="Ben Sekulowicz-Barclay" />
+	<meta name="Copyright" content="Copyright (c) 2009" />
+	<meta name="description" content="jQuery plugin allowing you to test for installed fonts on the client side. Written by Ben Sekulowicz-Barclay, (www.beseku.com)" />
+	<meta name="keywords" content="jquery, plugin, font, typography, beseku" />
+	
+	<!-- JS -->
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="jquery.font.mini.js"></script>
+	<script type="text/javascript">
+	
+		function getClass(s) {
+			// Loop through our JSON object ...
+			$(s).each(function() {
+				
+				// If the supplied family is present ...			
+				if ($.font.test(this.font)) {
+					
+					// Assign our class variable to this class			
+					c = this.body;
+					
+					// Stop the iterator here
+					return false;
+				}
+			});
+			
+			// Send back the class 
+			return (typeof(c) != 'undefined')? c: '';
+		}
+		
+	
+		$(document).ready(function() {
+			// Create a JSON object listing our font-families, ordered by priority
+			var test = 
+			[{
+				"body":"kolo",
+				"font":"'ACaslonPro-Regular','Adobe Caslon Pro'"				
+			},{
+				"body":"theo",
+				"font":"'AGaramondPro-Regular','Adobe Garamond Pro'"				
+			},{
+				"body":"cesc",
+				"font":"'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue'"				
+			}];
+			
+			// Get the <body> class, if its changed
+			var new_class = getClass(test);
+			
+			// Apply the class to the <body>
+			$('body').addClass(new_class);
+		});
+	</script>
+	
+	<!-- CSS -->
+	<style type="text/css">
+		body {
+			background:#FFFFFF;
+			color:#393939;
+			font-size:62.5%;
+			margin:0;
+			padding:0;
+		}
+		
+		body.kolo {
+			background:#FF0000;
+			color:#FFFFFF;
+		}
+		
+		body.theo {
+			background:#00FF00;
+			color:#FFFFFF;
+		}
+		
+		body.cesc {
+			background:#0000FF;
+			color:#FFFFFF;
+		}
+
+		p {
+			font:normal normal 200 1.6em/1.5em Georgia, Serif;
+			margin:1.5em auto 1.5em;
+			padding:0;
+			width:37.5em;
+		}
+	</style>
+</head>
+<body>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.</p>
+	<p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</p>
+</body>
+</html>	

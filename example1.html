@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-gb" xml:lang="en-gb">
+<head>
+	<title>Example usage:jquery.font.js</title>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Language" content="en-gb" />
+	<meta name="robots" content="all" />
+	<meta http-equiv="imagetoolbar" content="false" />
+	<meta name="MSSmartTagsPreventParsing" content="true" />
+	<meta name="author" content="Ben Sekulowicz-Barclay" />
+	<meta name="Copyright" content="Copyright (c) 2009" />
+	<meta name="description" content="jQuery plugin allowing you to test for installed fonts on the client side. Written by Ben Sekulowicz-Barclay, (www.beseku.com)" />
+	<meta name="keywords" content="jquery, plugin, font, typography, beseku" />
+	
+	<!-- JS -->
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="jquery.font.mini.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('body > ol > li').each(function() {				
+				$(this).css('backgroundColor', ($.font.test($(this).css('font-family')))? "#D1FFD1": "#FFD1D1");							
+			});
+		});
+	</script>
+	
+	<!-- CSS -->
+	<style type="text/css">
+		body {
+			background:#FFFFFF;
+			color:#393939;
+			font-size:62.5%;
+			margin:0;
+			padding:0;
+		}
+	
+		body ol {
+			font:normal normal 200 1em/3em Georgia, Serif;
+			list-style:none;
+			margin:3em 3em 0;
+			padding:0;
+			text-indent:none;
+		}
+		
+		body ol li {
+			border: solid 0.05em #C6C6C6;
+			font-size:2em;
+			line-height:1.5em;
+			margin:0 0 1.5em;
+			padding:0.75em;
+		}
+	</style>
+</head>
+<body>
+	<ol>	
+		<li style="font-family:'ACaslonPro-Regular','Adobe Caslon Pro';">Adobe Caslon Pro</li>
+		<li style="font-family:'AGaramondPro-Regular','Adobe Garamond Pro';">Adobe Garamond Pro</li>
+		<li style="font-family:'AJensonPro-Regular','Adobe Jenson Pro';">Adobe Jenson Pro</li>
+		<li style="font-family:'AvantGarde-CondBold','AvantGarde','Avant Garde';">Avant Garde</li>		
+		<li style="font-family:'AmericanTypewriter','American Typewriter';">American Typewriter</li>
+		<li style="font-family:'AndaleMono','Andale Mono';">Andale Mono</li>
+		<li style="font-family:'ArialMT','Arial';">Arial</li>
+		<li style="font-family:'Baskerville';">Baskerville</li>
+		<li style="font-family:'Calibri';">Calibri</li>
+		<li style="font-family:'Cambria';">Cambria</li>
+		<li style="font-family:'Candara';">Candara</li>
+		<li style="font-family:'ClarendonBT-Roman','Clarendon','Clarendon BT';">Clarendon BT</li>
+		<li style="font-family:'Classic-Roman','Classic','Classic Regular';">Classic</li>
+		<li style="font-family:'CooperBlackStd','Cooper Std';">Cooper Std</li>
+		<li style="font-family:'CourierNewPSMT','Courier New';">Courier New</li>
+		<li style="font-family:'DIN-Bold';">DIN-Bold</li>
+		<li style="font-family:'DIN-Light';">DIN-Light</li>
+		<li style="font-family:'DIN-Regular';">DIN-Regular</li>
+		<li style="font-family:'Futura';">Futura</li>
+		<li style="font-family:'Garamond';">Garamond</li>
+		<li style="font-family:'GaramondPremrPro','Garamond Premier Pro';">Garamond Premier Pro</li>
+		<li style="font-family:'Georgia';">Georgia</li>
+		<li style="font-family:'GillSans','Gill Sans';">Gill Sans</li>
+		<li style="font-family:'HelveticaCYBold','Helvetica CY','Helvetica CY Bold';">Helvetica CY Bold</li>
+		<li style="font-family:'LucidaGrande','Lucida Grande';">Lucida Grande</li>
+		<li style="font-family:'MarkerFelt-Thin','Marker Felt','Marker Felt Thin';">Marker Felt Thin</li>
+		<li style="font-family:'MyriadPro-Regular','Myriad Pro';">Myriad Pro</li>
+		<li style="font-family:'Palatino-Roman','Palatino';">Palatino</li>
+		<li style="font-family:'PanicSans','Panic Sans';">Panic Sans</li>
+		<li style="font-family:'Silkscreen';">Silkscreen</li>
+		<li style="font-family:'SketchRockwell','Sketch Rockwell';">Sketch Rockwell</li>
+		<li style="font-family:'STHeiti';">STHeiti</li>
+		<li style="font-family:'Times-Bold','Times','Times Bold';">Times Bold</li>
+		<li style="font-family:'TimesNewRomanPSMT','Times New Roman';">Times New Roman</li>
+		<li style="font-family:'Verdana';">Verdana</li>
+		<li style="font-family:'Zapfino';">Zapfino</li>
+	</ol>
+</body>
+</html>	
